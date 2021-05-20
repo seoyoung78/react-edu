@@ -1,5 +1,6 @@
-const { default: ComAClassTypeEventHandling } = require("./ComAClassTypeEventHandling");
-const { default: ComBFunTypeEventHandling } = require("./ComBFunTypeEventHandling");
+import ComAClassTypeEventHandling from "./ComAClassTypeEventHandling";
+import ComBFunTypeEventHandling from "./ComBFunTypeEventHandling";
+import ComCTwoWayBinding from "./ComCTwoWayBinding";
 
 function Exam06EventHandling() {
   return (
@@ -12,6 +13,8 @@ function Exam06EventHandling() {
         <ComAClassTypeEventHandling />
         <div className="m-2"></div>
         <ComBFunTypeEventHandling />
+        <div className="m-2"></div>
+        <ComCTwoWayBinding />
       </div>
     </div>
   );

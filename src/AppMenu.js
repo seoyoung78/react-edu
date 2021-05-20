@@ -20,6 +20,8 @@ function AppMenu() {
         <Link to="/ch02/exam04" className="nav-link text-warning">Exam04InlineCss</Link>
         <Link to="/ch02/exam05" className="nav-link text-warning">Exam05CssClass</Link>
         <Link to="/ch02/exam06" className="nav-link text-warning">Exam06EventHandling</Link>
+        <Link to="/ch02/exam07" className="nav-link text-warning">Exam07Repeat</Link>
+        <Link to="/ch02/exam08" className="nav-link text-warning">Exam08Ref</Link>
       </li>
     </ul>
   );
