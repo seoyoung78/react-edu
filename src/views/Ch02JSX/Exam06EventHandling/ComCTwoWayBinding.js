@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ComCTwoWayBinding() {
+function ComCTwoWayBinding(props) {
   const [content, setContent] = useState("");
   //content는 상태 변수, setContent는 상태 변수를 변경시키는 함수(setter)
 

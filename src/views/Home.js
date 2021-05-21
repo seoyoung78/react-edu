@@ -1,11 +1,11 @@
-function Home() {
+function Home(props) {
   return (
     <div className="card">
       <div className="card-header">
-          Home
+        Home
       </div>
       <div className="card-body">
-          content...
+        content...
       </div>
     </div>
   );

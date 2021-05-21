@@ -1,4 +1,4 @@
-function ComBFunTypeEventHandling() {
+function ComBFunTypeEventHandling(props) {
   const handleBtn1 = (event) => { //event 객체는 함수 실행하면 자동으로 넘어옴
     console.log("버튼1이 클릭되었습니다.");
     console.log(event.target.name);
