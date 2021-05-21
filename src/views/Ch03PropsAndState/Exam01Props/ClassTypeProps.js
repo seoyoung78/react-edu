@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class ClassTypeProps extends React.Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
-  }
+  } */
 
   render() {
     const {name, version, children} = this.props;
