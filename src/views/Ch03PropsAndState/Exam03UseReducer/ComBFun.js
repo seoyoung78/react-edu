@@ -60,6 +60,28 @@ function ComBFun(props) {
     dispatch({type: "DELETE", bno: bno});
   };
 
+  const changeUpdateBoard = (event) => {
+    setUpdateBoard({
+      ...updateBoard,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const selectBoard = (bno) => {
+    const selectedBoard = boards.find(board => board.bno === bno);
+    setUpdateBoard({...selectedBoard});
+  };
+
+  const handleUpdate = () => {
+    const board = {...updateBoard}
+    dispatch({type: "UPDATE", board});
+    setUpdateBoard({
+      bno: "",
+      btitle: "",
+      bcontent: ""
+    })
+  };
+
   return (
     <div className="card">
       <div className="card-header">
@@ -99,7 +121,7 @@ function ComBFun(props) {
                     <td>{board.btitle}</td>
                     <td>{board.bcontent}</td>
                     <td style={{width: "150px"}}>
-                      <button className="btn btn-info btn-sm mr-1">선택</button>
+                      <button className="btn btn-info btn-sm mr-1" onClick={() => {selectBoard(board.bno)}}>선택</button>
                       <button className="btn btn-danger btn-sm" onClick={() => {deleteBoard(board.bno)}}>삭제</button>
                     </td>
                   </tr>
@@ -113,19 +135,19 @@ function ComBFun(props) {
             <tbody>
               <tr>
                 <td style={{width:"100px"}}>bno</td>
-                <td><input type="text" name="bno" style={{width:"100%"}} readOnly/></td>
+                <td><input type="text" name="bno" style={{width:"100%"}} value={updateBoard.bno} readOnly/></td>
               </tr>          
               <tr>
                 <td style={{width:"100px"}}>btitle</td>
-                <td><input type="text" name="btitle" style={{width:"100%"}} /></td>
+                <td><input type="text" name="btitle" style={{width:"100%"}} value={updateBoard.btitle} onChange={changeUpdateBoard}/></td>
               </tr>
               <tr>
                 <td>bcontent</td>
-                <td><input type="text" name="bcontent" style={{width:"100%"}} /></td>
+                <td><input type="text" name="bcontent" style={{width:"100%"}} value={updateBoard.bcontent} onChange={changeUpdateBoard}/></td>
               </tr>
             </tbody>
           </table>
-          <button className="btn btn-success btn-sm">수정</button>
+          <button className="btn btn-success btn-sm" onClick={handleUpdate}>수정</button>
         </div>      
       </div>
     </div>
