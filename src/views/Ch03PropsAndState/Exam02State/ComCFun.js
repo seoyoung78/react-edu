@@ -26,10 +26,12 @@ function ComCFun(props) {
           ...joinForm,
           uskill: joinForm.uskill.concat(event.target.value)
         }); */
-        setJoinForm(prevJoinForm => ({
+        setJoinForm(prevJoinForm => {
+          return {
             ...prevJoinForm,
             uskill: prevJoinForm.uskill.concat(event.target.value)
-        }));
+          }
+        });
       } else {        
         /* setJoinForm({
           ...joinForm,

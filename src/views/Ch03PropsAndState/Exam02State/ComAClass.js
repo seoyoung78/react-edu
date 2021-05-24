@@ -18,7 +18,10 @@ class ComAClass extends React.Component {
     this.setState({
       ...this.state,  //원래 객체의 내용을 넣어 줌
       number: this.state.number + 1
+    }, () => {
+      console.log("이후: ", this.state.number); //변경 확인, 상태 함수 변화 후 작업해야할 경우
     });  //새로운 상태 객체를 넣어 줌 - 이전 상태와 비교 역할
+    console.log("이전: ", this.state.number);
   }
 
   //화살표 함수 - 속성으로 선언
