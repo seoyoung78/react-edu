@@ -9,17 +9,18 @@ import { AppContextProvider } from "AppContext";
 import { createStore } from "redux";
 import rootReducer from "redux/root-reducer";
 import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <AppContextProvider>
-          <App />
-        </AppContextProvider>  
-        </Provider>    
-    </BrowserRouter>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>  
+      </Provider>    
+  </BrowserRouter>,
   document.getElementById("root"),
 );
 
