@@ -1,7 +1,7 @@
 import AppContext from "AppContext";
 import React from "react";
 
-class LoginForm extends React.Component {
+class LoginFormClass extends React.Component {
   static contextType = AppContext;
 
   constructor(props) {
@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
     return (
       <div className="card">
         <div className="card-header">
-          LoginForm
+          LoginFormClass
         </div>
         <div className="card-body">
           <div className="form-group row">
@@ -48,4 +48,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default LoginFormClass;

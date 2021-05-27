@@ -59,6 +59,8 @@ function AppMenu() {
         <h6 className="text-white">Ch08. Global State</h6>
         <Link to="/ch08/exam01" className="nav-link text-warning">Exam01ColorContext</Link>
         <Link to="/ch08/exam02" className="nav-link text-warning">Exam02AppContext</Link>
+        <Link to="/ch08/exam03" className="nav-link text-warning">Exam03ColorRedux</Link>
+        <Link to="/ch08/exam04" className="nav-link text-warning">Exam04AuthRedux</Link>
       </li>
     </ul>
   );

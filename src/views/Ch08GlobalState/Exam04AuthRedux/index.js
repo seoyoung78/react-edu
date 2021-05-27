@@ -1,11 +1,11 @@
 import LoginFormClass from "./LoginFormClass";
 import LoginFormFun from "./LoginFormFun";
 
-function Exam02AppContext(props) {
+function Exam04AuthRedux(props) {
   return (
     <div className="card">
       <div className="card-header">
-        Exam02AppContext
+        Exam04AuthRedux
       </div>
       <div className="card-body">
         <LoginFormClass/>
@@ -15,4 +15,4 @@ function Exam02AppContext(props) {
   );
 }
 
-export default Exam02AppContext;
+export default Exam04AuthRedux;

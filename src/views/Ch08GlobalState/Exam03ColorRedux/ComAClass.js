@@ -1,0 +1,46 @@
+import React from "react";
+import { connect } from "react-redux";
+import { createSetColorAction } from "redux/color-reducer";
+
+class ComAClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleChange = this.handleChange.bind(this);
+  };
+
+  handleChange(event) {
+    this.props.setColor("red");
+  };
+
+  render() {
+    return (
+      <div className="card">
+        <div className="card-header">
+          ComAClass
+        </div>
+        <div className="card-body">
+          <button className="btn btn-info btn-sm mb-3" onClick={this.handleChange}>색깔 변경</button>
+            <div style={{backgroundColor: this.props.color}}>
+              내용
+            </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    color: state.colorReducer.color
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setColor: (color) => dispatch(createSetColorAction(color))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComAClass);
+//connect는 함수를 리턴 - props로 받아 컴포넌트에서 사용할 수 있도록 해줌
