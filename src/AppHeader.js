@@ -1,6 +1,14 @@
+import AppContext from "AppContext";
+import { useContext } from "react";
 import { Link } from "react-router-dom"
 
-function AppHeader() {
+function AppHeader(props) {
+  const appContext = useContext(AppContext);
+
+  const logout = (evnet) => {
+    appContext.setUid("");
+  };
+
   return (
     <nav className="navbar bg-dark navbar-dark text-white font-weight-bold 
                     justify-content-between">
@@ -9,7 +17,11 @@ function AppHeader() {
         {' '} React
       </Link>
       <div>
-        <Link to="/" className="btn btn-success btn-sm">로그인</Link>
+        {appContext.uid === "" ?
+          <Link to="/ch08/exam02" className="btn btn-success btn-sm">로그인</Link>
+          :
+          <button className="btn btn-success btn-sm" onClick={logout}>로그아웃</button>
+        }
       </div>
     </nav>
   );
