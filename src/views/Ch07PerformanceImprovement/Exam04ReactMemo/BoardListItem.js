@@ -12,7 +12,7 @@ function BoardListItem(props) {
 
   return (
     // 반복되는 값은 key 값을 가져야함
-    <div key={props.board.bno} className="d-flex align-items-center justify-content-between border-bottom">
+    <div className="d-flex align-items-center justify-content-between border-bottom">
       <div className="d-flex">
         <span style={{width:"80px"}}>{props.board.bno}</span>
         <span>{props.board.btitle}</span>
