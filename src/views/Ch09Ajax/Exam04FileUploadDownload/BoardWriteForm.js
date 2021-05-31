@@ -63,7 +63,7 @@ function BoardWriteForm(props) {
           <div className="form-group row">
             <label htmlFor="battach" className="col-sm-2 col-form-label">battach</label>
             <div className="col-sm-10">
-              <input id="battach" name="battach" type="file" className="form-control-file" ref={inputFile}/>    {/* DOM 참조 */}
+              <input name="battach" type="file" className="form-control-file" ref={inputFile}/>    {/* DOM 참조 */}
             </div>
           </div> 
           <div className="form-group row">

@@ -96,8 +96,8 @@ function BoardRead(props) {
             </div>
 
             <div>
-              <Link to={"/ch09/exam03?pageNo=" + pageNo} className="btn btn-info btn-sm mr-2">목록</Link>
-              <Link to={`/ch09/exam03/${board.bno}/updateForm`} className="btn btn-info btn-sm mr-2">수정</Link>
+              <Link to={"/ch09/exam04?pageNo=" + pageNo} className="btn btn-info btn-sm mr-2">목록</Link>
+              <Link to={`/ch09/exam04/${board.bno}/updateForm`} className="btn btn-info btn-sm mr-2">수정</Link>
               <button className="btn btn-info btn-sm mr-2" onClick={handleRemove}>삭제</button>
             </div>
           </>

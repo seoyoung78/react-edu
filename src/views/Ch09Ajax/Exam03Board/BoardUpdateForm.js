@@ -30,9 +30,13 @@ function BoardUpdateForm(props) {
 
   const handleUpdate = async (event) => {
     event.preventDefault();
+    try{
       const dirtyBoard = {...board};
       await updateBoard(dirtyBoard);
       props.history.goBack();
+    } catch(error) {
+      console.log(error);
+    }
   };
 
   const handleCancel = (event) => {

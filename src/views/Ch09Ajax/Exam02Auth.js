@@ -26,7 +26,7 @@ function Exam02Auth(props) {
       const response = await login(user);
       //요청 헤더에 JWT 토큰 추가
       addAuthHeader(response.data.authToken);
-      //Redux에 인증 내용 저장
+      //Redux에 인증 내용 저장 - 전역 변수처럼 사용하기 위해
       dispatch(createSetUidAction(response.data.userid));
       dispatch(createSetAuthTokenAction(response.data.authToken));
       //SessionStorage에 인증 내용 저장(브라우저 갱신시 사용)

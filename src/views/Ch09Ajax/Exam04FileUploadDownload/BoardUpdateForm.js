@@ -30,15 +30,19 @@ function BoardUpdateForm(props) {
 
   const handleUpdate = async (event) => {
     event.preventDefault();
+    try {
       const dirtyBoard = {...board};
       await updateBoard(dirtyBoard);
       props.history.goBack();
+    } catch(error) {
+      console.log(error);
+    }
   };
 
   const handleCancel = (event) => {
     props.history.goBack();
   };
-
+  console.log(board);
   return (
     <div className="card">
       <div className="card-header">
@@ -58,6 +62,12 @@ function BoardUpdateForm(props) {
               <input type="text" className="form-control" name="bcontent" value={board.bcontent} onChange={handleChange}/>
             </div>
           </div>
+          {/* <div className="form-group row">
+            <label htmlFor="bcontent" className="col-sm-2 col-form-label">battach</label>
+            <div className="col-sm-10">
+              <input type="file" className="form-control" name="bcontent" value={board.battach} onChange={handleChange}/>
+            </div>
+          </div> */}
           <div className="form-group row">
             <div className="col-sm-12 d-flex justify-content-center">
               <input type="submit" className="btn btn-primary btn-sm mr-2" value="수정"/>
