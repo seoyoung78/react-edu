@@ -4,7 +4,9 @@ import { createSetUidAction } from "redux/auth-reducer";
 
 function LoginFormFun(props) {
   const [uid, setUid] = useState("");
+  //바인딩할 상태함수를 가져옴
   const globalUid = useSelector((state) => state.authReducer.uid);
+  //액션을 만들어서 리듀서에 통보
   const dispatch = useDispatch();
 
   const handleChange = (evnet) => {
@@ -12,7 +14,9 @@ function LoginFormFun(props) {
   };
 
   const login = (event) => {
+    //액션 생성 함수를 사용하는 것이 유지보수 용이 및 변리
     dispatch(createSetUidAction(uid));
+    // dispatch({type:"auth/setUid", uid});
     setUid("");
   };
 

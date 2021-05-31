@@ -2,17 +2,25 @@ import AppContext from "AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { createSetUidAction } from "redux/auth-reducer";
+import { createSetAuthTokenAction, createSetUidAction } from "redux/auth-reducer";
+import { removeAuthHeader } from "apis/axiosConfig";
 
 function AppHeader(props) {
+  //Context를 이용할 경우
   const appContext = useContext(AppContext);
 
+  //Redux를 이용할 경우
   const globalUid = useSelector((state) => state.authReducer.uid);
   const dispatch = useDispatch();
 
   const logout = (evnet) => {
+    //Context를 이용할 경우
     appContext.setUid("");
+
+    //Redux를 이용할 경우
     dispatch(createSetUidAction(""));
+    dispatch(createSetAuthTokenAction(""));
+    removeAuthHeader();
   };
 
   return (
@@ -24,7 +32,7 @@ function AppHeader(props) {
       </Link>
       <div>
         {appContext.uid === "" && globalUid === ""?
-          <Link to="/ch08/exam02" className="btn btn-success btn-sm">로그인</Link>
+          <Link to="/ch09/exam02" className="btn btn-success btn-sm">로그인</Link>
           :
           <div className="d-flex align-items-center">
             <span className="mr-2">User ID: {appContext.uid || globalUid}</span>
