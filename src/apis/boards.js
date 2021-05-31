@@ -29,5 +29,5 @@ export function updateBoard(board) {
 }
 
 export function downloadAttach(bno) {
-  return axios.get("/boards/battach/" + bno, {responseType: "blob"});
+  return axios.get("/boards/battach/" + bno, {responseType: "blob"});   //지정된 타입으로 변환하고 파싱하지 않음
 }

@@ -29,6 +29,9 @@ function Exam02Auth(props) {
       //Redux에 인증 내용 저장
       dispatch(createSetUidAction(response.data.userid));
       dispatch(createSetAuthTokenAction(response.data.authToken));
+      //SessionStorage에 인증 내용 저장(브라우저 갱신시 사용)
+      sessionStorage.setItem("uid", response.data.userid);
+      sessionStorage.setItem("authToken", response.data.authToken);
     } catch(error) {
       console.log(error);
     }
@@ -40,6 +43,9 @@ function Exam02Auth(props) {
     //Redux에 인증 내용 제거
     dispatch(createSetUidAction(""));
     dispatch(createSetAuthTokenAction(""));
+    //SessionStorage에 인증 내용 제거
+    sessionStorage.removeItem("uid");
+    sessionStorage.removeItem("authToken");
   };
 
   const handleBoardList = async (event) => {

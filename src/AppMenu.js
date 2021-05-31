@@ -67,6 +67,7 @@ function AppMenu() {
         <Link to="/ch09/exam01" className="nav-link text-warning">Exam01AsyncControl</Link>
         <Link to="/ch09/exam02" className="nav-link text-warning">Exam02Auth</Link>
         <Link to="/ch09/exam03" className="nav-link text-warning">Exam03Board</Link>
+        <Link to="/ch09/exam04" className="nav-link text-warning">Exam04FileUploadDownload</Link>
       </li>
     </ul>
   );
