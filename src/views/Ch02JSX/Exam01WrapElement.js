@@ -6,6 +6,8 @@ function Exam01WrapElement (props) {
       </div>
       <div className="card-body">
           content...
+          <hr/>
+          <input></input>
       </div>
     </div>
   );
